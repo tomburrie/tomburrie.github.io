@@ -65,10 +65,13 @@
 											<div class="carousel-inner">
 
 											<div class="item active">
-												<div class="row">
-														{% for post in paginator.posts %}
-																<div class="col-sm-4 portfolio-item">
-																		<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+
+												{% for post in site.posts %}
+
+														{% cycle 'add row' : '<div class="row">', nil, nil, nil %}
+
+																<div class="col-sm-3 portfolio-item">
+																			<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
 																				<div class="caption">
 																						<div class="caption-content">
 																								<i class="fa fa-search-plus fa-3x"></i>
@@ -77,8 +80,13 @@
 																				<img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
 																		</a>
 																</div>
-														{% endfor %}
-													</div>
+
+														{% cycle 'end row' : nil, nil, nil, '</div>' %}
+
+												{% endfor %}
+												{% cycle 'end row' : nil, '</div>', '</div>', '</div>' %}
+
+												
 												</div><!--.row-->
 											</div><!--.item-->
 
