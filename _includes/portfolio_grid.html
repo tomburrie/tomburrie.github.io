@@ -67,7 +67,8 @@
 											
 
 												{% for post in site.posts %}
-													{% cycle 'section-group-start': '<div class="item {% if forloop.first %}active{% endif %}"><div class="row">', '', '' %}
+												<div class="item {% if forloop.first %}active{% endif %}">
+													{% cycle 'section-group-start': '<div class="row">', '', '' %}
 														<div class="col-sm-3 portfolio-item">
 																<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
 																		<div class="caption">
