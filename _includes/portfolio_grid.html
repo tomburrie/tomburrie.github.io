@@ -78,8 +78,8 @@
 																		<img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
 																	</a>
 															</div>
-														{% if forloop.last %}</div></div>{% else %}
-													{% cycle 'section-group-end': '', '', '</div>' %}
+														{% if forloop.last %}</div>{% else %}
+													{% cycle 'section-group-end': '', '', '</div></div>' %}
 												{% endif %}
 											{% endfor %}
 						
