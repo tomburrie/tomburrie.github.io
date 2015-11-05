@@ -67,6 +67,8 @@
 											
 
 												{% for post in site.posts %}
+												
+												<div class="item {% if forloop.first == true %}active{% endif %}">
 
 														{% cycle 'add row' : '<div class="row item">', nil, nil, nil %}
 
@@ -88,7 +90,9 @@
 
 												
 												</div><!--.row-->
-											
+						
+						
+											</div><!--.item-->
 
 						
 											</div><!--.carousel-inner-->
