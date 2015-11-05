@@ -64,36 +64,31 @@
 											<!-- Carousel items -->
 											<div class="carousel-inner">
 
-											
+											<div class="item active">
 
 												{% for post in site.posts %}
-												
-												<div class="item active">
-
-														{% cycle 'add row' : '<div class="row item">', nil, nil, nil %}
-
-																<div class="col-sm-3 portfolio-item">
-																			<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
-																				<div class="caption">
-																						<div class="caption-content">
-																								<i class="fa fa-search-plus fa-3x"></i>
-																						</div>
+													{% cycle 'section-group-start': '<div class="row">', '', '' %}
+														<div class="col-sm-3 portfolio-item">
+																<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+																		<div class="caption">
+																				<div class="caption-content">
+																						<i class="fa fa-search-plus fa-3x"></i>
 																				</div>
-																				<img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
-																		</a>
-																</div>
-
-														{% cycle 'end row' : nil, nil, nil, '</div>' %}
-
-												{% endfor %}
-												</div><!--.row-->
-												{% cycle 'end row' : nil, '</div>', '</div>', '</div>' %}
-
-												
-												
+																		</div>
+																		<img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
+																	</a>
+															</div>
+														{% if forloop.last %}</div>{% else %}
+													{% cycle 'section-group-end': '', '', '</div>' %}
+												{% endif %}
+											{% endfor %}
 						
 						
 											</div><!--.item-->
+					
+					
+					
+											
 
 						
 											</div><!--.carousel-inner-->
