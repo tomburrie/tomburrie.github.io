@@ -67,7 +67,7 @@
 											
 
 												{% for post in site.posts %}
-													{% cycle 'section-group-start': '<div class="row item">', '', '' %}
+													{% cycle 'section-group-start': '<div class="item"{% if forloop.last %}active{% else %}><div class="row">', '', '' %}
 														<div class="col-sm-3 portfolio-item">
 																<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
 																		<div class="caption">
@@ -79,7 +79,7 @@
 																	</a>
 															</div>
 														{% if forloop.last %}</div>{% else %}
-													{% cycle 'section-group-end': '', '', '</div>' %}
+													{% cycle 'section-group-end': '', '', '</div></div>' %}
 												{% endif %}
 											{% endfor %}
 						
