@@ -64,9 +64,10 @@
 											<!-- Carousel items -->
 											<div class="carousel-inner">
 
-											<div class="item active">
+											
 
 												{% for post in site.posts %}
+												<div class="item active">
 													{% cycle 'section-group-start': '<div class="row">', '', '' %}
 														<div class="col-sm-3 portfolio-item">
 																<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
@@ -81,10 +82,11 @@
 														{% if forloop.last %}</div>{% else %}
 													{% cycle 'section-group-end': '', '', '</div>' %}
 												{% endif %}
+												</div><!--.item-->
 											{% endfor %}
 						
 						
-											</div><!--.item-->
+											
 					
 					
 					
