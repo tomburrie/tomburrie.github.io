@@ -1,103 +1,73 @@
 
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
-<!--
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Portfolio</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-						<div class="row">
-									{% for post in paginator.posts %}
-											<div class="col-sm-4 portfolio-item">
-													<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
-															<div class="caption">
-																	<div class="caption-content">
-																			<i class="fa fa-search-plus fa-3x"></i>
-																	</div>
-															</div>
-															<img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
-													</a>
-											</div>
-									{% endfor %}
-							</div>
-							{% if paginator.total_pages != 1 %}  
-								<div class="row text-center text-caps">
-									<div class="col-md-8 col-md-offset-2">
-										<nav class="pagination" role="pagination">
-											<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span> 
-											{% if site.paginate_path != 'page:num'%} {% assign paginate_url = site.paginate_path | remove:'/page:num' %} 
-											{% if paginator.previous_page %} {% if paginator.previous_page == 1 %}
-											<a class="newer-posts" href="{{ site.url }}/{{ paginate_url }}/" class="btn" title="Newer Posts">&larr; Newer Posts</a> 
-											{% else %}
-											<a class="newer-posts" href="{{ site.url }}/{{ paginate_url }}/page{{ paginator.previous_page }}/" class="btn" title="Newer Posts">&larr; Newer Posts</a> 
-											{% endif %} {% endif %} {% if paginator.next_page %}
-											<a class="older-posts" href="{{ site.url }}/{{ paginate_url }}/page{{ paginator.next_page }}/" class="btn" title="Older Posts">Older Posts &rarr;</a> 
-											{% endif %} {% else %} 
-											{% if paginator.previous_page %} 
-											{% if paginator.previous_page == 1 %}
-											<a class="newer-posts" href="{{ site.url }}/" class="btn" title="Newer Posts">&larr; Newer Posts</a> 
-											{% else %}
-											<a class="newer-posts" href="{{ site.url }}/page{{ paginator.previous_page }}/" class="btn" title="Newer Posts">&larr; Newer Posts</a> 
-											{% endif %} {% endif %} 
-											{% if paginator.next_page %}
-											<a class="older-posts" href="{{ site.url }}/page{{ paginator.next_page }}/" class="btn" title="Older Posts">Older Posts &rarr;</a>
-										</nav>
-									</div>
-								</div>
-							{% endif %} {% endif %} {% endif %}
-        </div>
--->
-				<div class="container">
+		<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-											<div id="Carousel" class="carousel slide">
-
-											<ol class="carousel-indicators">
-													<li data-target="#Carousel" data-slide-to="0" class="active"></li>
-													<li data-target="#Carousel" data-slide-to="1"></li>
-													<li data-target="#Carousel" data-slide-to="2"></li>
-											</ol>
-
-											<!-- Carousel items -->
-											<div class="carousel-inner">
-
-											
-
-												{% for post in site.posts %}
-													{% cycle 'section-group-start': '<div class="item {% if forloop.index == 1 %}active {% endif %}"><div class="row">', '', '' %}
-														<div class="col-sm-3 portfolio-item">
-																<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
-																		<div class="caption">
-																				<div class="caption-content">
-																						<i class="fa fa-search-plus fa-3x"></i>
-																				</div>
-																		</div>
-																		<img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
-																	</a>
-															</div>
-														{% if forloop.last %}</div>{% else %}
-													{% cycle 'section-group-end': '', '', '</div></div>' %}
-												{% endif %}
-											{% endfor %}
-						
-						
-											</div><!--.item-->
 					
-					
-					
-											
+						<div id="carousel" class="carousel slide">
+  			
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+								{% for post in site.posts offset:1 %}
+										{% if forloop.first %}
+												{% capture iteration %}{% cycle '1', '2' %}{% endcapture %}
+												<li data-target="#carousel" data-slide-to="0" class="active"></li>
+										{% else %}
+												{% capture iteration %}{% cycle '1', '2' %}{% endcapture %}
+												<li data-target="#carousel" data-slide-to="1"></li>
+										{% endif %}
+								{% endfor %}
+						</ol>
 
-						
-											</div><!--.carousel-inner-->
-												<a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-												<a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-											</div><!--.Carousel-->
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+								{% for post in site.posts %}
+										{% if forloop.first %}
+												{% cycle 'section-group-start': '<div class="item active">'+'<div class="row">', '', '' %}
+													<div class="col-sm-3 portfolio-item">
+															<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+																	<div class="caption">
+																			<div class="caption-content">
+																					<i class="fa fa-search-plus fa-3x"></i>
+																			</div>
+																	</div>
+																	<img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
+																</a>
+														</div>
+													{% if forloop.last %}</div>{% else %}
+												{% cycle 'section-group-end': '', '', '</div>'+'</div>' %}
+											{% endif %}
+										{% else %}
+												{% cycle 'section-group-start': '<div class="item">'+'<div class="row">', '', '' %}
+													<div class="col-sm-3 portfolio-item">
+															<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+																	<div class="caption">
+																			<div class="caption-content">
+																					<i class="fa fa-search-plus fa-3x"></i>
+																			</div>
+																	</div>
+																	<img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
+																</a>
+														</div>
+													{% if forloop.last %}</div>{% else %}
+												{% cycle 'section-group-end': '', '', '</div>'+'</div>' %}
+											{% endif %}
+										{% endif %}
+								{% endfor %}
+						</div>
 
-					</div>
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel" data-slide="prev">
+								<span class="glyphicons white chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#carousel" data-slide="next">
+								<span class="glyphicons white chevron-right"></span>
+						</a>
+
 				</div>
+					</div>
+			</div>
 			</div><!--.container-->
 
     </section>

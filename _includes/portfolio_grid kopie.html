@@ -1,0 +1,58 @@
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+		<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div id="Carousel" class="carousel slide">
+
+							<ol class="carousel-indicators">
+									<li data-target="#Carousel" data-slide-to="0" class="active"></li>
+									<li data-target="#Carousel" data-slide-to="1"></li>
+									<li data-target="#Carousel" data-slide-to="2"></li>
+							</ol>
+
+							<!-- Carousel items -->
+							<div class="carousel-inner">
+
+								{% for post in site.posts %}
+									{% cycle 'section-group-start': '<div class="item">'+'<div class="row">', '', '' %}
+										<div class="col-sm-3 portfolio-item">
+												<a href="#portfolioModal-{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
+														<div class="caption">
+																<div class="caption-content">
+																		<i class="fa fa-search-plus fa-3x"></i>
+																</div>
+														</div>
+														<img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
+													</a>
+											</div>
+										{% if forloop.last %}</div>{% else %}
+									{% cycle 'section-group-end': '', '', '</div>'+'</div>' %}
+								{% endif %}
+							{% endfor %}
+
+								
+
+
+
+
+
+
+
+
+							</div><!--.carousel-inner-->
+								<a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+								<a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+							</div><!--.Carousel-->
+						
+					</div>
+			</div>
+			</div><!--.container-->
+
+    </section>
+
+
+
+
+				
