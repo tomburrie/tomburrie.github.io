@@ -5,18 +5,10 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 body, html {
-  width: 100%;
   height: 100%; }
 
 .media {
   margin-bottom: 20px; }
-
-/* bootstrap 3 helpers */
-#nav.affix {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10; }
 
 span.divider {
   display: block;
@@ -38,15 +30,6 @@ header.hero {
   background-size: cover;
   -o-background-size: cover; }
 
-/* Small Devices, Tablets */
-@media only screen and (max-width: 768px) {
-  header.hero {
-    margin-top: 50px; }
-
-  #nav.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%; } }
 header.hero .container {
   vertical-align: middle;
   position: relative;
@@ -62,6 +45,78 @@ header.hero .container {
 .hero img {
   max-width: 100%; }
 
+/*
+ * Sidebar
+ */
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+  .sidebar-nav {
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    overflow-y: visible;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 250px;
+    z-index: 1; }
+
+  .sidebar-nav:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: url("http://placehold.it/1024") no-repeat top right fixed; }
+
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none; }
+
+  .sidebar-nav .navbar ul {
+    float: none; }
+
+  .sidebar-nav .navbar ul:not {
+    display: block; }
+
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block; }
+
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px; }
+
+  .sidebar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin: 0;
+    padding: 5px 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+  .sidebar-nav .open .dropdown-menu > li > a {
+    padding: 5px 15px 5px 25px; }
+
+  .sidebar-nav .navbar-brand {
+    width: 100%; } }
+.sidebar-nav .open .dropdown-menu .dropdown-header {
+  padding: 5px 15px 5px 25px;
+  color: #222222;
+  font-size: 14px;
+  font-weight: bold; }
+
+.sidebar-nav .divider {
+  background-color: #317256; }
+
+@media (min-width: 768px) {
+  #page-wrapper {
+    position: inherit;
+    margin: 0 0 0 250px;
+    padding: 30px;
+    min-height: 1300px; } }
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
