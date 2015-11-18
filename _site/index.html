@@ -31,34 +31,49 @@
     <![endif]-->
 </head>
 
-    <body>
+    <body data-spy="scroll" data-target="#myNavbar">
 
 			<!-- Content -->
 				<div class="container">
 						<div class="row">
-
-							<div class="col-sm-9">
-								    <!-- Header -->
-    <header class="hero" style="background-image: url(http://placehold.it/1500x900 )">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 centering text-center ">
-                    <img class="img-circle" src="http://placehold.it/250x250/ffffff/000000" alt="">
-                    <div class="hero-text text-center">
-                			<h1>Tom Burrie</h1>
-                			<h1 class="small">Ontwerper</h1>
-                			<p>29 jaar jong en ambitieus.</p>                
-											<a href="#" class="btn btn-lg btn-primary">Know Me Better</a>
-            				</div>
-                </div>
-            </div>
-        </div>
-    </header>
+							<div class="col-sm-4">
+									<div id="myNavbar" class="sidebar-nav">
+    <div id="navbar-green" class="navbar navbar-custom" role="navigation">
+    
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="visible-xs navbar-brand">Sidebar menu</span>
+      </div>
+      
+      <div class="navbar-collapse collapse sidebar-navbar-collapse">
+				<div class="hidden-xs navbar-brand">
+					<h2>Tom Burrie</h2>
+					<h2 class="small">Ontwerper</h2>
+					<p>29 jaar jong en ambitieus.</p>      
+				</div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#about">Over</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Menu Item 4</a></li>
+          <li><a href="#">Reviews</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+      
+    </div><!--/.navbar -->
+  </div><!--/.sidebar-nav -->  
+							</div>
+							<div class="col-sm-8" style="overflow-x:hidden;">
+								
 								 <!-- About Section -->
     <section class="success" id="about">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Hallo, ik ben Tom</h2>
+                    <h2>Ik zal me even voorstellen</h2>
                     <p class="lead">Ik ben een ontwerper</p>
 										<span class="divider"></span>
                 </div>
@@ -78,15 +93,14 @@
     </section>
 								 <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-12">
                     <h2>Contact Me</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-lg-12">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
                     <form name="sentMessage" id="contactForm" novalidate>
@@ -128,20 +142,18 @@
                     </form>
                 </div>
             </div>
-        </div>
     </section>
 								 <!-- About Section -->
     <section class="success" id="services">
-        <div class="container">
 				 <div class="row">
-							<div class="col-lg-8 col-lg-offset-2">
+							<div class="col-lg-12">
 									<h2>Wat ik doe</h2>
 									<p class="lead">en waar ik goed in ben</p>
 									<span class="divider"></span>
 							</div>
 					</div>
 					<div class="row">
-						<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-12">
             <div class="row">
                 <div class="col-md-4">
                     <div class="media">
@@ -190,7 +202,6 @@
             </div>
 							</div>
 						</div>
-        </div>
     </section>
 								 <!-- About Section -->
     <section class="success" id="services">
@@ -222,15 +233,14 @@
     </section>
 								 <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-12">
                     <h2>Contact Me</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-lg-12">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
                     <form name="sentMessage" id="contactForm" novalidate>
@@ -272,64 +282,60 @@
                     </form>
                 </div>
             </div>
-        </div>
     </section>
 								    <!-- Footer -->
     <footer class="text-center">
         <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-4">
-                        <h3>Location</h3>
-                        <p>
-                            
-                                3481 Melrose Place <br>
-		                    
-                                Beverly Hills, CA 90210 <br>
-		                    
-                        </p>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3>
-                        <ul class="list-inline">
-                            
-                            <li>
-                                <a href="http://twitter.com/jekyllrb" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-		                    
-                            <li>
-                                <a href="" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-		                    
-                            <li>
-                                <a href="http://stackoverflow.com/questions/tagged/jekyll" class="btn-social btn-outline"><i class="fa fa-fw fa-stack-overflow"></i></a>
-                            </li>
-		                    
-                            <li>
-                                <a href="http://bitbucket.org/jekyll" class="btn-social btn-outline"><i class="fa fa-fw fa-bitbucket"></i></a>
-                            </li>
-		                    
-                            <li>
-                                <a href="http://github.com/jekyll" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
-                            </li>
-		                    
-                        </ul>
-                    </div>
-                    <div class="footer-col col-md-4">
-                        <h3>Creditsfootter</h3>
-                        <p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
-                    </div>
-                </div>
-            </div>
+					<div class="row">
+							<div class="footer-col col-md-4">
+									<h3>Location</h3>
+									<p>
+											
+													3481 Melrose Place <br>
+									
+													Beverly Hills, CA 90210 <br>
+									
+									</p>
+							</div>
+							<div class="footer-col col-md-4">
+									<h3>Around the Web</h3>
+									<ul class="list-inline">
+											
+											<li>
+													<a href="http://twitter.com/jekyllrb" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+											</li>
+									
+											<li>
+													<a href="" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+											</li>
+									
+											<li>
+													<a href="http://stackoverflow.com/questions/tagged/jekyll" class="btn-social btn-outline"><i class="fa fa-fw fa-stack-overflow"></i></a>
+											</li>
+									
+											<li>
+													<a href="http://bitbucket.org/jekyll" class="btn-social btn-outline"><i class="fa fa-fw fa-bitbucket"></i></a>
+											</li>
+									
+											<li>
+													<a href="http://github.com/jekyll" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+											</li>
+									
+									</ul>
+							</div>
+							<div class="footer-col col-md-4">
+									<h3>Creditsfootter</h3>
+									<p>Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+							</div>
+					</div>
         </div>
         <div class="footer-below">
-            <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         Copyright &copy; Dr. Henry Jekyll 2015
                     </div>
                 </div>
-            </div>
+
         </div>
     </footer>
 
@@ -614,44 +620,7 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js"></script>
 							</div>
-							<div class="col-sm-3">
-									<div id="sidebar" class="sidebar-nav">
-    <div id="navbar-green" class="navbar navbar-default" role="navigation">
-    
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <span class="visible-xs navbar-brand">Sidebar menu</span>
-      </div>
-      
-      <div class="navbar-collapse collapse sidebar-navbar-collapse">
-      <div class="hidden-xs navbar-brand">Sidebar menu</div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Menu Item 1</a></li>
-          <li><a href="#">Menu Item 2</a></li>
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <strong class="caret"></strong></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Menu Item 4</a></li>
-          <li><a href="#">Reviews</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-      
-    </div><!--/.navbar -->
-  </div><!--/.sidebar-nav -->  
-							</div>
+
 						</div>
 				</div>
 			

@@ -14,11 +14,12 @@ $brand-primary: #ba3333;
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+@import "bootstrap";
 
 body, html {
+	position: relative; 
 	height: 100%;
 }
-
 .media{
 	margin-bottom: 20px;
 }
@@ -70,62 +71,106 @@ header.hero .container{
  * Sidebar
  */
 
-/* make sidebar nav vertical */ 
+/* make sidebar nav vertical */
+
+
+@media (min-width: $screen-sm ) {
+  .sidebar-nav {
+    width: 235px;
+		position: fixed;
+  }
+		.sidebar-nav:before{
+    content: "";
+    top: 0;
+    width: 1225px;
+    position: absolute;
+    background-image: url("http://static.livedemo00.template-help.com/wt_53810/images/header-bg.jpg");
+    right: 0;
+    bottom: 0;
+    background-attachment: fixed;
+    background-position: -930px top;
+    background-size: cover; 
+}
+}
+@media (min-width: $screen-md) {
+  .sidebar-nav {
+    width: 309px; 
+  }
+}
+@media (min-width: $screen-lg) {
+  .sidebar-nav {
+    width: 375px; 
+  }
+}
+
+
 @media (min-width: 768px) {
 
-.sidebar-nav {
-  list-style: none;
-  height: 100%;
-  margin: 0;
-  overflow-y: visible;
-  padding: 0;
-  position: fixed;
-  top: 0;
-  width: 250px;
-  z-index: 1;
+	.sidebar-nav {
+		list-style: none;
+		position: fixed;
+		height: 100%;
+		margin: 0;
+		overflow-y: visible;
+		padding: 0;
+		top: 0;
+		left: auto;
+		right: auto;
+		z-index: 1;
+		text-align: right;
+		padding-right: 15px;
+	}
+	.sidebar-nav:before{
+    content: "";
+    top: 0;
+    width: 1225px;
+    position: absolute;
+    background-image: url("http://static.livedemo00.template-help.com/wt_53810/images/header-bg.jpg");
+    right: 0;
+    bottom: 0;
+    background-attachment: fixed;
+    background-position: -930px top;
+    background-size: cover; 
 }
-.sidebar-nav:before{
-	content: "";
-  height:100%;
-  width:100%;
-  position:fixed;
-  background:url('http://placehold.it/1024') no-repeat top right fixed;
-}
-.sidebar-nav .navbar .navbar-collapse {
-  padding: 0;
-  max-height: none;
-}
-.sidebar-nav .navbar ul {
-  float: none;
-}
-.sidebar-nav .navbar ul:not {
-  display: block;
-}
-.sidebar-nav .navbar li {
-  float: none;
-  display: block;
-}
-.sidebar-nav .navbar li a {
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-.sidebar-nav .open .dropdown-menu {
-  position: static;
-  float: none;
-  width: auto;
-  margin: 0;
-  padding: 5px 0;
-  background-color: transparent;
-  border: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.sidebar-nav .open .dropdown-menu > li > a {
-  padding: 5px 15px 5px 25px;
-}
-.sidebar-nav .navbar-brand {
-  width: 100%;
-}
+	.sidebar-nav .navbar .navbar-collapse {
+		padding: 0;
+		max-height: none;
+	}
+	.sidebar-nav .navbar ul {
+		float: none;
+	}
+	.sidebar-nav .navbar ul:not {
+		display: block;
+	}
+	.sidebar-nav .navbar li {
+		float: none;
+		display: block;
+	}
+	.sidebar-nav .navbar li a {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+	.sidebar-nav .open .dropdown-menu {
+		position: static;
+		float: none;
+		width: auto;
+		margin: 0;
+		padding: 5px 0;
+		background-color: transparent;
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	.sidebar-nav .open .dropdown-menu > li > a {
+		padding: 5px 15px 5px 25px;
+	}
+	.sidebar-nav .navbar-brand {
+		padding: 0;
+		width: 100%;
+		height: auto;
+		float: none;
+		
+	}
 }
 
 .sidebar-nav .open .dropdown-menu .dropdown-header  {
@@ -148,4 +193,3 @@ header.hero .container{
 }
 
 
-@import "bootstrap";

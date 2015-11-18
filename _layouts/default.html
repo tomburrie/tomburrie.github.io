@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
     {% include head.html %}
-    <body>
+    <body data-spy="scroll" data-target="#myNavbar">
 
 			<!-- Content -->
 				<div class="container">
 						<div class="row">
-
-							<div class="col-sm-9">
-								{% include header.html %}
+							<div class="col-sm-4">
+								{% include nav.html %}
+							</div>
+							<div class="col-sm-8" style="overflow-x:hidden;">
+								
 								{% include about.html %}
 								{% include contact.html %}
 								{% include services.html %}
@@ -18,9 +20,7 @@
 								{% include modals.html %}
 								{% include js.html %}
 							</div>
-							<div class="col-sm-3">
-								{% include nav.html %}
-							</div>
+
 						</div>
 				</div>
 			
